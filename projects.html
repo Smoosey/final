@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nate Pearson - Projects</title>
+        <link rel="stylesheet" href="portfolio.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+                <div class="container">
+                    <h1>Projects</h1>
+                </div>
+        </header>
+
+        <nav>
+            <div class="container">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="#">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h2>Projects</h2>
+            <section>
+                <ul>
+                    <li>
+                        <h3>Project 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                        <button class="btn btn-success" data-project="1">Show Details</button>
+                    </li>
+                    <li>
+                        <h3>Project 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                        <button class="btn btn-success" data-project="2">Show Details</button>
+                    </li>
+                    <li>
+                        <h3>Project 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                        <button class="btn btn-success" data-project="3">Show Details</button>
+                    </li>
+                </ul>
+            </section>
+            <section id="project-details">
+                <h3 id="project-title"></h3>
+                <p id="project-description"></p>
+                <a id="project-link" href=""></a>
+            </section>
+        </div>
+        <script>
+            // Get references to the project details elements
+            var projectDetails = document.getElementById('project-details');
+            var projectTitle = document.getElementById('project-title');
+            var projectDescription = document.getElementById('project-description');
+            var projectLink = document.getElementById('project-link');
+
+            // Get references to the project buttons
+            var projectButtons = document.getElementsByClassName('btn btn-success');
+
+            // Add event listeners to the project buttons
+            for (var i = 0; i < projectButtons.length; i++) {
+                projectButtons[i].addEventListener('click', function() {
+                    // Get the project number from the data attribute
+                    var projectNumber = this.getAttribute('data-project');
+
+                    // Update the project details elements with the corresponding project information
+                    projectTitle.innerHTML = 'Project ' + projectNumber;
+                    projectDescription.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.';
+                    projectLink.href = 'https://example.com/project-' + projectNumber + '/';
+                    projectLink.innerHTML = 'View Project ' + projectNumber;
+
+                    // Show the project details section
+                    projectDetails.style.display = 'block';
+                });
+            }
+        </script>
+    </body>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nate Pearson. All rights reserved.</p>
+        </div>
+    </footer>
+</html>
